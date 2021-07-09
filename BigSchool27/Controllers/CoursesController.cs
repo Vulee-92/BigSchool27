@@ -10,11 +10,12 @@ namespace BigSchool27.Controllers
 {
     public class CoursesController : Controller
     {
+
         // GET: Courses
         public ActionResult Create()
 
         {
-            BigSchoolContext context = new BigSchoolContext();
+            BigSchoolContext2 context = new BigSchoolContext2();
             Course objCourse = new Course();
             objCourse.ListCategory = context.Category.ToList();
             return View(objCourse);
@@ -25,7 +26,7 @@ namespace BigSchool27.Controllers
 
         public ActionResult Create(Course objCourse)
         {
-            BigSchoolContext context = new BigSchoolContext();
+            BigSchoolContext2 context = new BigSchoolContext2();
             ModelState.Remove("LecturerId");
             if (!ModelState.IsValid)
             {

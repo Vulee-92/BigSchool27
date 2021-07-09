@@ -9,6 +9,12 @@ namespace BigSchool27.Models
     [Table("Course")]
     public partial class Course
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Course()
+        {
+            AspNetUsers1 = new HashSet<AspNetUsers>();
+        }
+        public string Name;
         public int Id { get; set; }
 
         [Required]
@@ -23,8 +29,12 @@ namespace BigSchool27.Models
 
         public int CategoryId { get; set; }
         public List<Category> ListCategory = new List<Category>();
-        public string Name;
+
+        public virtual AspNetUsers AspNetUsers { get; set; }
 
         public virtual Category Category { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUsers> AspNetUsers1 { get; set; }
     }
 }

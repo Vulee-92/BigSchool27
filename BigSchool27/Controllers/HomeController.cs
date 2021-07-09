@@ -13,7 +13,7 @@ namespace BigSchool27.Controllers
     {
         public ActionResult Index()
         {
-            BigSchoolContext context = new BigSchoolContext();
+            BigSchoolContext2 context = new BigSchoolContext2();
             var upcommingCourse = context.Course.Where(p => p.DateTime > DateTime.Now).OrderBy(p => p.DateTime).ToList();
             foreach (Course i in upcommingCourse)
             {
