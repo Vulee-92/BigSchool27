@@ -12,9 +12,15 @@ namespace BigSchool27.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Course()
         {
+<<<<<<< HEAD
             Attendance = new HashSet<Attendance>();
         }
 
+=======
+            AspNetUsers1 = new HashSet<AspNetUsers>();
+        }
+        public string Name;
+>>>>>>> 8d1082d2b9824be613cdc001653876a527e31fea
         public int Id { get; set; }
 
         [Required]
@@ -30,9 +36,16 @@ namespace BigSchool27.Models
         public int CategoryId { get; set; }
         public List<Category> ListCategory = new List<Category>();
 
+<<<<<<< HEAD
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Attendance> Attendance { get; set; }
+=======
+        public virtual AspNetUsers AspNetUsers { get; set; }
+>>>>>>> 8d1082d2b9824be613cdc001653876a527e31fea
 
         public virtual Category Category { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AspNetUsers> AspNetUsers1 { get; set; }
     }
 }
